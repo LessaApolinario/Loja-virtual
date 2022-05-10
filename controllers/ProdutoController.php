@@ -59,4 +59,16 @@ class ProdutoController
             require_once 'view/removeProduto.php';
         }
     }
+
+    public function list()
+    {
+        $this->produtoDao = new ProdutoDAO();
+        $produtos = $this->produtoDao->list();
+
+        if ($produtos) {
+            return $produtos;
+        }
+
+        return [];
+    }
 }

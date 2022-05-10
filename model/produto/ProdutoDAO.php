@@ -45,6 +45,14 @@ class ProdutoDAO
         return $stmt->execute();
     }
 
+    public function list()
+    {
+        $stmt = $this->conexao->prepare("SELECT *  FROM produto");
+        $stmt->execute();
+        $produtos = $stmt->fetchAll();
+        return $produtos;
+    }
+
     function buscarProduto($id)
     {
         $stmt = $this->conexao->prepare("SELECT id FROM produto");
