@@ -13,7 +13,7 @@ class ProdutoDAO
 
     function store($produto)
     {
-        $stmt = $this->conexao->prepare("INSERT INTO produtos (nome, descricao,	preco, caminho_imagem, categorias, quantidade, ncm) VALUES (nome = :nome, descricao = :descricao, preco = :preco, caminho_imagem = :caminho_imagem, categorias = :categorias, quantidade = :quantidade, ncm = :ncm)");
+        $stmt = $this->conexao->prepare("INSERT INTO produto (nome, descricao,	preco, caminho_imagem, categorias, quantidade, ncm) VALUES (nome = :nome, descricao = :descricao, preco = :preco, caminho_imagem = :caminho_imagem, categorias = :categorias, quantidade = :quantidade, ncm = :ncm)");
         $stmt->bindValue(':nome', $produto->getNome());
         $stmt->bindValue(':descricao', $produto->getDescricao());
         $stmt->bindValue(':categorias', $produto->getCategorias());
@@ -26,7 +26,7 @@ class ProdutoDAO
 
 
     function update($produto) {
-        $stmt = $this->conexao->prepare("UPDATE produtos SET (nome = :nome, descricao = :descricao, preco = :preco, caminho_imagem = :caminho_imagem, categorias = :categorias, quantidade = :quantidade, ncm = :ncm) WHERE id = :id");
+        $stmt = $this->conexao->prepare("UPDATE produto SET (nome = :nome, descricao = :descricao, preco = :preco, caminho_imagem = :caminho_imagem, categorias = :categorias, quantidade = :quantidade, ncm = :ncm) WHERE id = :id");
         $stmt->bindParam(':nome', $produto->getNome());
         $stmt->bindParam('descricao', $produto->getDescricao());
         $stmt->bindParam('preco', $produto->getPreco());
