@@ -36,4 +36,19 @@ class ProdutoDAO
         $stmt->bindParam(':id', $produto->getId());
         return $stmt->execute();
     }
+
+    function buscarProduto($id) {
+        $stmt = $this->conexao->prepare("SELECT id FROM produto");
+        $stmt->execute();
+        
+        $produtosArray = $stmt->fetchAll();
+
+        while ($linha = $produtosArray) {
+            if ($linha["id"] == $id) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

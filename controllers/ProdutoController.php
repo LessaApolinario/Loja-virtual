@@ -40,7 +40,9 @@ class ProdutoController
         // procurando por id
         $idProcurado = $_REQUEST['idProcurado'];
 
-        if ($this->produtoDao->update($this->produto) && $idProcurado == $this->produto->getID()) {
+        $produtoProcurado = $this->produtoDao->buscarProduto($idProcurado);
+
+        if ($this->produtoDao->update($this->produto) && $produtoProcurado) {
             $_REQUEST["sucesso"] = true;
             require_once 'view/atualizaProduto.php';
         }
