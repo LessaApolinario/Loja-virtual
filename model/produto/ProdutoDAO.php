@@ -25,7 +25,8 @@ class ProdutoDAO
     }
 
 
-    function update($produto) {
+    function update($produto)
+    {
         $stmt = $this->conexao->prepare("UPDATE produto SET (nome = :nome, descricao = :descricao, preco = :preco, caminho_imagem = :caminho_imagem, categorias = :categorias, quantidade = :quantidade, ncm = :ncm) WHERE id = :id");
         $stmt->bindParam(':nome', $produto->getNome());
         $stmt->bindParam('descricao', $produto->getDescricao());
@@ -37,16 +38,18 @@ class ProdutoDAO
         return $stmt->execute();
     }
 
-    public function remove($id) {
+    public function remove($id)
+    {
         $stmt = $this->conexao->prepare("DELETE FROM produto WHERE id = :id");
         $stmt->bindParam(':id', $id);
         return $stmt->execute();
     }
 
-    function buscarProduto($id) {
+    function buscarProduto($id)
+    {
         $stmt = $this->conexao->prepare("SELECT id FROM produto");
         $stmt->execute();
-        
+
         $produtosArray = $stmt->fetchAll();
 
         while ($linha = $produtosArray) {
