@@ -37,6 +37,12 @@ class ProdutoDAO
         return $stmt->execute();
     }
 
+    public function remove($id) {
+        $stmt = $this->conexao->prepare("DELETE FROM produto WHERE id = :id");
+        $stmt->bindParam(':id', $id);
+        return $stmt->execute();
+    }
+
     function buscarProduto($id) {
         $stmt = $this->conexao->prepare("SELECT id FROM produto");
         $stmt->execute();
