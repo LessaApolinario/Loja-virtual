@@ -2,12 +2,12 @@
 <?php
 if ($_REQUEST) {
     if ($_REQUEST['sucesso'] == true) {
-        echo "Produto inserido com sucesso";
+        echo "Produto atualizado com sucesso";
     }
 }
 ?>
-<h1>Cadastrar Produto</h1>
-<form action="../index.php?classe=Produto&acao=store" method="POST">
+<h1>Atualizar Produto</h1>
+<form action="../index.php?classe=Produto&acao=update" method="POST">
     Nome: <input name="nome"></input><br>
     Descrição: <input name="descricao"></input><br>
     Categorias: <input name="categorias"></input><br>
@@ -15,6 +15,7 @@ if ($_REQUEST) {
     Preço: <input name="preco"></input><br>
     NCM: <input name="ncm"></input><br>
     Imagem: <input name="caminho_imagem"></input><br>
+    id: <input name="idProcurado"><br>
     <input type="submit" />
 </form>
 

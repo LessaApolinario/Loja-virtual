@@ -7,8 +7,8 @@ class ProdutoDAO
 
     function __construct()
     {
-        $Database = new Database;
-        $this->conexao = $Database->getConexao();
+        $database = new Database();
+        $this->conexao = $database->getConexao();
     }
 
     function store($produto)
@@ -21,6 +21,19 @@ class ProdutoDAO
         $stmt->bindValue(':caminho_imagem', $produto->getCaminho_imagem());
         $stmt->bindValue(':ncm', $produto->getNcm());
         $stmt->bindValue(':quantidade', $produto->getQuantidade());
+        return $stmt->execute();
+    }
+
+
+    function update($produto) {
+        $stmt = $this->conexao->prepare("UPDATE produtos SET (nome = :nome, descricao = :descricao, preco = :preco, caminho_imagem = :caminho_imagem, categorias = :categorias, quantidade = :quantidade, ncm = :ncm) WHERE id = :id");
+        $stmt->bindParam(':nome', $produto->getNome());
+        $stmt->bindParam('descricao', $produto->getDescricao());
+        $stmt->bindParam('preco', $produto->getPreco());
+        $stmt->bindParam('caminho_imagem', $produto->caminho_imagem());
+        $stmt->bindParam('ncm', $produto->getNcm());
+        $stmt->bindParam('quantidade', $produto->getQuantidade());
+        $stmt->bindParam(':id', $produto->getId());
         return $stmt->execute();
     }
 }

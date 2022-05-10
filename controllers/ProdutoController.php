@@ -18,10 +18,31 @@ class ProdutoController
         $this->produto->setPreco($_REQUEST['preco']);
         $this->produto->setCategorias($_REQUEST['categorias']);
         $this->produto->setNcm($_REQUEST['ncm']);
-        
+
         if ($this->produtoDao->store($this->produto)) {
             $_REQUEST['sucesso'] = true;
             require_once 'view/produto.php';
+        }
+    }
+
+    public function update()
+    {
+        $this->produtoDao = new ProdutoDAO();
+        $this->produto = new Produto();
+        $this->produto->setNome($_REQUEST["nome"]);
+        $this->produto->setCaminho_imagem($_REQUEST['caminho_imagem']);
+        $this->produto->setDescricao($_REQUEST['descricao']);
+        $this->produto->setQuantidade($_REQUEST['quantidade']);
+        $this->produto->setPreco($_REQUEST['preco']);
+        $this->produto->setCategorias($_REQUEST['categorias']);
+        $this->produto->setNcm($_REQUEST['ncm']);
+
+        // procurando por id
+        $idProcurado = $_REQUEST['idProcurado'];
+
+        if ($this->produtoDao->update($this->produto) && $idProcurado == $this->produto->getID()) {
+            $_REQUEST["sucesso"] = true;
+            require_once 'view/atualizaProduto.php';
         }
     }
 }
