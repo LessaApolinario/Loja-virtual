@@ -47,4 +47,16 @@ class ProdutoController
             require_once 'view/atualizaProduto.php';
         }
     }
+
+    public function remove()
+    {
+        $this->produtoDao = new ProdutoDAO();
+        $idProcurado = $_REQUEST["idProcurado"];
+        $produtoProcurado = $this->produtoDao->buscarProduto($idProcurado);
+
+        if ($this->produtoDAO->remove() && $produtoProcurado) {
+            $_REQUEST["sucesso"] = true;
+            require_once 'view/removeProduto.php';
+        }
+    }
 }
