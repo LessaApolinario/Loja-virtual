@@ -7,7 +7,7 @@ if ($_REQUEST) {
 }
 ?>
 <h1>Cadastrar Produto</h1>
-<form action="../index.php?classe=Produto&acao=store" method="POST">
+<form action="../../index.php?classe=Produto&acao=store" method="POST">
     Nome: <input name="nome"></input><br>
     Descrição: <input name="descricao"></input><br>
     Categorias: <input name="categorias"></input><br>

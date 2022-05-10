@@ -7,7 +7,7 @@ if ($_REQUEST) {
 }
 ?>
 <h1>Remover produto</h1>
-<form action="../index.php?classe=Produto&acao=remove" method="POST">
+<form action="../../index.php?classe=Produto&acao=remove" method="POST">
     <label for="remover">Remover</label>
     <input type="submit" id="remover" />
 </form>
