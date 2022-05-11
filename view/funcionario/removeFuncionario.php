@@ -8,8 +8,9 @@ if ($_REQUEST) {
 ?>
 <h1>Remover funcionario</h1>
 <form action="../../index.php?classe=Funcionario&acao=remove" method="POST">
-    <label for="remover">Remover</label>
-    <input type="submit" id="remover" />
+    <label>Remover</label>
+    <input type="text" name="idProcurado">
+    <input type="submit" />
 </form>
 
 </html>
