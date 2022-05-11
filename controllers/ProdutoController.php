@@ -1,6 +1,6 @@
 <?php
-require_once 'model/Produto.php';
-require_once 'model/ProdutoDAO.php';
+require_once './model/produto/Produto.php';
+require_once './model/produto/ProdutoDAO.php';
 
 class ProdutoController
 {
@@ -21,7 +21,7 @@ class ProdutoController
 
         if ($this->produtoDao->store($this->produto)) {
             $_REQUEST['sucesso'] = true;
-            require_once 'view/produto.php';
+            require_once 'view/produto/produto.php';
         }
     }
 
@@ -44,7 +44,7 @@ class ProdutoController
 
         if ($this->produtoDao->update($this->produto) && $produtoProcurado) {
             $_REQUEST["sucesso"] = true;
-            require_once 'view/atualizaProduto.php';
+            require_once 'view/produto/atualizaProduto.php';
         }
     }
 
@@ -56,7 +56,7 @@ class ProdutoController
 
         if ($this->produtoDAO->remove() && $produtoProcurado) {
             $_REQUEST["sucesso"] = true;
-            require_once 'view/removeProduto.php';
+            require_once 'view/produto/removeProduto.php';
         }
     }
 
