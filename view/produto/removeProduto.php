@@ -2,7 +2,7 @@
 <?php
 if ($_REQUEST) {
     if ($_REQUEST['sucesso'] == true) {
-        echo "Produto inserido com sucesso";
+        echo "Produto removido com sucesso";
     }
 }
 ?>
