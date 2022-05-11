@@ -1,5 +1,6 @@
 <?php
-require_once '../Database.php';
+define('ROOT_PATH', dirname(__DIR__));
+require_once ROOT_PATH . '../Database.php';
 
 class ProdutoDAO
 {
