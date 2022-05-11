@@ -65,8 +65,8 @@ class ProdutoController
         $this->produtoDao = new ProdutoDAO();
         $produtos = $this->produtoDao->list();
 
-        $_REQUEST["produtos"] = array($produtos);
-        
+        $_REQUEST["produtos"] = $produtos;
+
         require_once './view/produto/listar_produtos_view.php';
     }
 }
