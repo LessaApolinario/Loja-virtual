@@ -44,7 +44,7 @@ class CategoriaDAO
 
     function buscarCategoria($id)
     {
-        $stmt = $this->conexao->prepare("SELECT id FROM produto");
+        $stmt = $this->conexao->prepare("SELECT id FROM categoria");
         $stmt->execute();
 
         $categoriasArray = $stmt->fetchAll();
