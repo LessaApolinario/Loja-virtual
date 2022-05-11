@@ -67,6 +67,7 @@ class ProdutoController
 
         if ($produtos) {
             $_REQUEST["produtos"] = $produtos;
+            require_once 'view/produto/listarProdutos.php';
             return $produtos;
         }
 
