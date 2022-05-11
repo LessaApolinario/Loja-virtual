@@ -51,9 +51,9 @@ class CategoriaController
     public function list()
     {
         $this->CategoriaDAO = new CategoriaDAO();
-        $produtos = $this->CategoriaDAO->list();
+        $categorias = $this->CategoriaDAO->list();
 
-        $_REQUEST["produtos"] = $produtos;
+        $_REQUEST["categorias"] = $categorias;
 
         require_once './view/produto/listar_categoria_view.php';
     }
