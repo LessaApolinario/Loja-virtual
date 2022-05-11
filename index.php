@@ -1,5 +1,5 @@
 <?php
-/*$classe = $_GET['classe'];
+$classe = $_GET['classe'];
 $metodo = $_GET['acao'];
 
 $classe .= 'Controller';
@@ -7,6 +7,4 @@ $classe .= 'Controller';
 require_once 'controllers/'.$classe.'.php';
 
 $objeto = new $classe();
-$objeto->$metodo();*/
-
-require_once './view/produto/produto.php';
+$objeto->$metodo();

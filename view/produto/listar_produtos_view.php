@@ -1,5 +1,7 @@
 <?php
-$produtos = $_REQUEST["produtos"];
+if ($_REQUEST) {
+    $produtos = $_REQUEST["produtos"];
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,15 +25,15 @@ $produtos = $_REQUEST["produtos"];
             <th>quantidade</th>
             <th>ncm</th>
         </tr>
-        <?php foreach ($clientes as $cliente) : ?>
+        <?php foreach ($produtos as $produto) : ?>
             <tr>
-                <td><?php $cliente["nome"] ?></td>
-                <td><?php $cliente["descricao"] ?></td>
-                <td><?php $cliente["preco"] ?></td>
-                <td><?php $cliente["caminho_imagem"] ?></td>
-                <td><?php $cliente["categorias"] ?></td>
-                <td><?php $cliente["quantidade"] ?></td>
-                <td><?php $cliente["ncm"] ?></td>
+                <td><?php $produto["nome"] ?></td>
+                <td><?php $produto["descricao"] ?></td>
+                <td><?php $produto["preco"] ?></td>
+                <td><?php $produto["caminho_imagem"] ?></td>
+                <td><?php $produto["categorias"] ?></td>
+                <td><?php $produto["quantidade"] ?></td>
+                <td><?php $produto["ncm"] ?></td>
             </tr>
         <?php endforeach; ?>
     </table>
