@@ -66,6 +66,7 @@ class ProdutoController
         $produtos = $this->produtoDao->list();
 
         if ($produtos) {
+            $_REQUEST["produtos"] = $produtos;
             return $produtos;
         }
 
