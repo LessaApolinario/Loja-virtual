@@ -61,6 +61,6 @@ class FuncionarioController
 
         $_REQUEST["funcionarios"] = $funcionarios;
 
-        require_once './view/produto/listar_funcionario_view.php';
+        require_once './view/funcionario/listar_funcionario_view.php';
     }
 }

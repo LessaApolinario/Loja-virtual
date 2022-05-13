@@ -59,6 +59,6 @@ class ClienteController
 
         $_REQUEST["clientes"] = $clientes;
 
-        require_once './view/produto/listar_cliente_view.php';
+        require_once './view/cliente/listar_cliente_view.php';
     }
 }

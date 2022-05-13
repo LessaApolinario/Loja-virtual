@@ -55,6 +55,6 @@ class CategoriaController
 
         $_REQUEST["categorias"] = $categorias;
 
-        require_once './view/produto/listar_categoria_view.php';
+        require_once './view/categoria/listar_categoria_view.php';
     }
 }
